@@ -1,0 +1,17 @@
+name: CI-CD for node app 
+on:
+ push:
+  branches:
+    - main 
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v4 
+        with:
+          repository: khushi13131313/Blobstation_GitHub
+      - name: test the code
+        run:  echo "This is testing stages"
+      - name: Deploy 
+        run: echo "This is deploy steps"
