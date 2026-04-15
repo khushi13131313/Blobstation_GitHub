@@ -17,7 +17,7 @@ jobs:
         with:
          args: >
           -Dsonar.projectKey=Blobstation_GitHub
-          -Dsonar.projectName=lobstation_GitHub
+          -Dsonar.projectName=Blobstation_GitHub
           -Dsonar.sources=.
           -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
