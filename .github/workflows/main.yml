@@ -14,14 +14,12 @@ jobs:
         # sonarqube quality check 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
-        env:
-         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
          args: >
           -Dsonar.projectKey=Blobstation_GitHub
           -Dsonar.projectName=lobstation_GitHub
           -Dsonar.sources=.
+          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
            
            
