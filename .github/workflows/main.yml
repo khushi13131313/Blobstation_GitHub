@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v4 
         with:
           repository: khushi13131313/Blobstation_GitHub
-        # sonarqube quality check 
+        # sonarqube quality check 0
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         with:
