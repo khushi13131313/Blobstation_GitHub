@@ -14,15 +14,16 @@ jobs:
         # sonarqube quality check quality check 
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         with:
          args: >
           -Dsonar.projectKey=Blobstation_GitHub
           -Dsonar.projectName=Blobstation_GitHub
-          -Dsonar.sources=.
-          -Dsonar.host.url=${{ secrets.SONAR_HOST_URL }}
-          -Dsonar.login=${{ secrets.SONAR_TOKEN }}  
-           
-           
+          -Dsonar.sources=. 
+          -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+                  
            # Login to Docker Hub
       - name: Login to Docker Hub
         uses: docker/login-action@v3
